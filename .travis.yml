@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_intsall:
+  - docker build -t vladimir44/ci-cd -f Dockerfile.dev .
+
+script:
+  - docker run vladimir44/ci-cd npm run test -- --coverage
