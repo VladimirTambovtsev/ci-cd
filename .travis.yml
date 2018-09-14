@@ -7,3 +7,19 @@ before_install:
 
 script:
   - docker run vladimir44/ci-cd npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "ci-cd"
+  env: "CiCd-env"
+  bucket_name: "elasticbeanstalk-us-east-2-181410295797"
+  bucket_path: "ci-cd"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
+
+  http://cicd-env.w3zevmvwsp.us-east-2.elasticbeanstalk.com/
