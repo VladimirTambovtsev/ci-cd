@@ -12,6 +12,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           I was changed
+          P.S merged with feature branch
         </p>
       </div>
     );
