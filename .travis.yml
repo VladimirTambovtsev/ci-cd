@@ -8,6 +8,7 @@ before_install:
 script:
   - docker run vladimir44/ci-cd npm run test -- --coverage
 
+
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
