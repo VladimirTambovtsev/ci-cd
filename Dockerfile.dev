@@ -1,0 +1,12 @@
+# create base image
+FROM node:alpine
+
+WORKDIR '/app'
+
+# enable cache, install dependencies, mv to '/app'
+COPY package.json .
+RUN npm install 
+COPY . . 
+
+# run cmds
+CMD ["npm", "run", "start"]
